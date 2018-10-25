@@ -1,0 +1,37 @@
+[submodule "pack/mix/opt/syntastic"]
+	path = pack/mix/opt/syntastic
+	url = https://github.com/scrooloose/syntastic.git
+[submodule "Vundle.vim"]
+	path = Vundle.vim
+	url = https://github.com/VundleVim/Vundle.vim.git
+	branch = master
+[submodule "bundle/Vundle.vim"]
+	path = bundle/Vundle.vim
+	url = https://github.com/VundleVim/Vundle.vim.git
+	branch = master
+[submodule "pack/completor/start/completor.vim"]
+	path = pack/completor/start/completor.vim
+	url = https://github.com/maralla/completor.vim.git
+	branch = master
+[submodule "pack/plugins/start/completor.vim"]
+	path = pack/plugins/start/completor.vim
+	url = https://github.com/maralla/completor.vim.git
+[submodule "pack/plugins/start/ultisnips"]
+	path = pack/plugins/start/ultisnips
+	url = https://github.com/sirver/ultisnips.git
+[submodule "pack/plugins/start/vim-fswitch"]
+	path = pack/plugins/start/vim-fswitch
+	url = https://github.com/derekwyatt/vim-fswitch.git
+	branch = master
+[submodule "pack\\plugins\\start\\completor"]
+	path = pack\\plugins\\start\\completor
+	url = https://github.com/maralla/completor.vim.git
+	branch = master
+[submodule "pack/plugins/start/completor"]
+	path = pack/plugins/start/completor
+	url = https://github.com/maralla/completor.vim.git
+	branch = master
+[submodule "pack\\plugins\\start\\syntastic"]
+	path = pack\\plugins\\start\\syntastic
+	url = https://github.com/scrooloose/syntastic.git
+	branch = master
