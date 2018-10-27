@@ -43,8 +43,10 @@ ino <F10> <c-o>:qa<cr>
 no <F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extras=+fq
 nn <F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extras=+fq
 
-map <C-PageDown> :tabnext<cr>
-map <C-PageUp> :tabNext<cr>
+map <c-PageDown> :bn<cr>
+map <c-PageUp> :bp<cr>
+imap <c-PageDown> <c-o>:bn<cr>
+imap <c-PageUp> <c-o>:bp<cr>
 
 "[*] Подсветка выделения
 nn * *N
