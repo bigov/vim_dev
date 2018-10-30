@@ -29,7 +29,8 @@ exec "highlight CursorLine cterm=NONE ctermbg=254 guifg=NONE guibg=".color0
 exec "highlight ColorColumn ctermbg=254 guibg=".color0
 exec "highlight Comment ctermfg=248  guifg=".color2
 exec "highlight LineNr ctermfg=242 ctermbg=7 guifg=".color2
-exec "highlight CursorLineNr ctermfg=0 ctermbg=7 cterm=bold guibg=".color0
+exec "highlight CursorLineNr ctermfg=0 ctermbg=7 cterm=bold guibg=".color0.
+   \" guifg=".color2
 exec "highlight StatusLine ctermfg=242 ctermbg=15 guifg=".color1
 exec "highlight StatusLineNC ctermfg=250 ctermbg=8 guifg=".color1
 exec "highlight VertSplit guifg=".color1

@@ -73,7 +73,7 @@ let g:completor_auto_trigger = 0
 inoremap <expr> <Tab> Tab_Or_Complete()
 
 "let g:completor_complete_options = 'menuone,noselect,preview'
-let g:completor_complete_options = 'menuone'
+let g:completor_complete_options = 'menuone,noselect'
 let g:completor_def_split = 'vsplit'
 
 " Tag-List
