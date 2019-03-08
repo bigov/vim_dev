@@ -76,13 +76,14 @@ exec "source " . g:vimrc_dir . "_funcs.vim"
 exec "source " . g:vimrc_dir . "_keys.vim"
 exec "source " . g:vimrc_dir . "_plugs.vim"
 
-if &term == "linux"
-  exec "source " . g:vimrc_dir . "_colors_d.vim"
-elseif &term == "xterm-256color"
-  exec "source " . g:vimrc_dir . "_colors_d.vim"
-else
-  exec "source " . g:vimrc_dir . "_colors_l.vim"
-endif
+"if &term == "linux"
+"  exec "source " . g:vimrc_dir . "_colors_d.vim"
+"elseif &term == "xterm-256color"
+"  exec "source " . g:vimrc_dir . "_colors_d.vim"
+"else
+"  exec "source " . g:vimrc_dir . "_colors_l.vim"
+"endif
+colorscheme blue
 
 " Загрузить, если есть, персональные настройки проекта
 if filereadable(".vim")
