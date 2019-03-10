@@ -7,9 +7,9 @@ inoremap <C-o>u <C-o>u
 
 ino <C-v> <Esc>"+gPa
 no  <C-v> "+gP
-
-"ino <C-м> <Esc>l"+gPi
-"ino <C-М> <Esc>l"+gPi
+" То-же в русской раскладке
+ino <C-м> <Esc>"+gPa
+no <C-м> <Esc>"+gP
 
 "[F2] - сохранить содержимое из текущего буфера в файл
 ino <F2> <Esc>:write<cr>a
