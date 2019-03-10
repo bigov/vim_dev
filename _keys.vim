@@ -5,7 +5,9 @@
 " Чтоб не было задержки при восстановлении в режиме вставки
 inoremap <C-o>u <C-o>u
 
-"ino <C-v> <Esc>l"+gPi
+ino <C-v> <Esc>"+gPi
+no  <C-v> "+gP
+
 "ino <C-м> <Esc>l"+gPi
 "ino <C-М> <Esc>l"+gPi
 

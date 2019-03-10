@@ -83,7 +83,7 @@ exec "source " . g:vimrc_dir . "_plugs.vim"
 "else
 "  exec "source " . g:vimrc_dir . "_colors_l.vim"
 "endif
-colorscheme blue
+colorscheme default
 
 " Загрузить, если есть, персональные настройки проекта
 if filereadable(".vim")
