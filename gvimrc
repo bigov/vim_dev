@@ -14,4 +14,3 @@ endif
 "set guioptions-=T
 "set guitabtooltip=1
 set lines=75 columns=135
-
