@@ -39,6 +39,10 @@ set tabstop=2
 set shiftwidth=2       " ширина сдвига строк по команде ">"
 set wrap               " залом строки по границе окна
 set textwidth=0
+set cc=+2 " show the right border column on number = textwidth+1
+set cc=80 " Когда textwidth=0, то маркера не видно, поэтому ставим число
+set cmdheight=2
+set statusline=[%n]\ %<%f\ [%Y%R,%{&ff},%{&fenc}%W]%=%m\ %03l/%03L\ [%03v\ %03b]
 set laststatus=2
 set backspace=2
 set incsearch          " Инкрементальный поиск (в процессе набора)
@@ -76,14 +80,12 @@ exec "source " . g:vimrc_dir . "_funcs.vim"
 exec "source " . g:vimrc_dir . "_keys.vim"
 exec "source " . g:vimrc_dir . "_plugs.vim"
 
-"if &term == "linux"
-"  exec "source " . g:vimrc_dir . "_colors_d.vim"
-"elseif &term == "xterm-256color"
-"  exec "source " . g:vimrc_dir . "_colors_d.vim"
-"else
-"  exec "source " . g:vimrc_dir . "_colors_l.vim"
-"endif
-colorscheme pablo
+" Настройка подсветки
+set t_Co=256
+set background=light
+" Подсветка текста, который дальше границы 79
+"match PreProc /\%>79v.\+/ " text color for border column = Preproc
+exec "source " . g:vimrc_dir . "_colors.vim"
 
 " Загрузить, если есть, персональные настройки проекта
 if filereadable(".vim")
