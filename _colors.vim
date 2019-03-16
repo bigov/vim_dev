@@ -28,6 +28,10 @@ highlight Pmenu guibg=#99ff99 guifg=#222222
 highlight PmenuSel guibg=#ffff88 guifg=#444444 gui=bold
 highlight TabLineFill ctermfg=242
 highlight TabLine cterm=NONE ctermbg=250
+highlight Error guifg=#ff4444 guibg=NONE gui=bold,undercurl guisp=Red
+
+highlight Type ctermfg=darkgreen
+highlight Statement ctermfg=brown
 
 " Подсветка в окне тегов (открывается по F8)
 highlight MyTagListFileName guibg=#bcbcff guifg=#3030d0 gui=bold
