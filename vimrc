@@ -80,6 +80,8 @@ exec "source " . g:vimrc_dir . "_funcs.vim"
 exec "source " . g:vimrc_dir . "_keys.vim"
 exec "source " . g:vimrc_dir . "_plugs.vim"
 
+au BufRead,BufNewFile *.tf  set filetype=terraform
+
 " Настройка подсветки
 set t_Co=256
 set background=light
