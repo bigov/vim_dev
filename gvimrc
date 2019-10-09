@@ -6,11 +6,16 @@ set antialias
 
 " Если gVIM запущен под MS-Windows
 if match($OS, "Windows") > -1
-  set guifont=DejaVu_Sans_Mono:h9:cRUSSIAN:qDRAFT
+  " для MS-Windows
+  set guifont=Consolas:h9:cRUSSIAN:qDRAFT
+  set lines=70 columns=120
 else
+  " для Linux
   set guifont=DejaVu\ Sans\ Mono\ 9
+  set lines=75 columns=135
 endif
 
 "set guioptions-=T
 "set guitabtooltip=1
 set lines=75 columns=135
+
