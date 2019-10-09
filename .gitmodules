@@ -35,3 +35,6 @@
 	path = pack\\plugins\\start\\syntastic
 	url = https://github.com/scrooloose/syntastic.git
 	branch = master
+[submodule "pack/plugins/start/rust.vim"]
+	path = pack/plugins/start/rust.vim
+	url = https://github.com/rust-lang/rust.vim
