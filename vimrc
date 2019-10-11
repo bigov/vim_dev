@@ -1,12 +1,13 @@
 "----------------------------------------------------------------------------"
 "
-" Edited: 28.10.2018
+" Edited: 11.10.2019
 "
 "----------------------------------------------------------------------------"
 
 set nocompatible
+
 " Location for swap files
-set directory^=$HOME/.vim/swap//
+"set directory^=$HOME/.vim/swap//
 
 set cursorline
 set number
@@ -14,8 +15,9 @@ syntax enable
 set noguipty "Make external commands work through a pipe instead of a pseudo-tty
 
 set encoding=utf-8
-"set langmenu=ru_RU.UTF-8
+set langmenu=ru_RU.UTF-8
 let $LANG='ru_RU'
+set t_Co=256
 
 set fileencodings=utf-8,cp1251,cp866,koi8-r
 set fileformat=unix
