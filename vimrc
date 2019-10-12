@@ -1,15 +1,10 @@
 "----------------------------------------------------------------------------"
 "
-" Edited: 11.10.2019
+" Edited: 12.10.2019
 "
 "----------------------------------------------------------------------------"
-
+"
 set nocompatible
-
-" Location for swap files
-"set directory^=$HOME/.vim/swap//
-
-set cursorline
 set number
 syntax enable
 set noguipty "Make external commands work through a pipe instead of a pseudo-tty
@@ -17,22 +12,12 @@ set noguipty "Make external commands work through a pipe instead of a pseudo-tty
 set encoding=utf-8
 set langmenu=ru_RU.UTF-8
 let $LANG='ru_RU'
-set t_Co=256
 
 set fileencodings=utf-8,cp1251,cp866,koi8-r
 set fileformat=unix
 set hidden
 set mouse=a
 set showmode
-
-" Системное меню
-set wildmenu
-set wildmode=full
-source $VIMRUNTIME/delmenu.vim
-source $VIMRUNTIME/menu.vim
-set cpoptions-=<      "Disable the recognition of special key codes in <>
-set wildcharm=<C-Z>
-map <F9> :emenu <C-Z>
 
 set showcmd
 set allowrevins
@@ -44,7 +29,6 @@ set textwidth=0
 set cc=+2 " show the right border column on number = textwidth+1
 set cc=80 " Когда textwidth=0, то маркера не видно, поэтому ставим число
 set cmdheight=2
-set statusline=[%n]\ %<%f\ [%Y%R,%{&ff},%{&fenc}%W]%=%m\ %03l/%03L\ [%03v\ %03b]
 set laststatus=2
 set backspace=2
 set incsearch          " Инкрементальный поиск (в процессе набора)
@@ -60,38 +44,35 @@ set splitright               " Открываем вертикальные ок�
 filetype on                  " Vim filetype   detection
 filetype plugin on           " Vim plugins system
 
-set list " Подсветка " " пробелов и "  " табов
-set listchars=tab:‣\ ,trail:·,precedes:«,extends:»
-
-if match($OS, "Windows") > -1
+if has('win32')
   let g:vimrc_dir=$HOME . '\vimfiles\'
 else
   let g:vimrc_dir=$HOME . '/.vim/'
 endif
 
-if match(system('uname'), "MSYS_NT") > -1
-  let g:vimrc_dir = $HOME . '/.vim/'
-endif
-
-if match(system('uname'), "MINGW64_NT") > -1
-  let g:vimrc_dir = $HOME . '/.vim/'
-endif
-
 exec "source " . g:vimrc_dir . "_mswin.vim"
 exec "source " . g:vimrc_dir . "_funcs.vim"
 exec "source " . g:vimrc_dir . "_keys.vim"
-exec "source " . g:vimrc_dir . "_plugs.vim"
-
-au BufRead,BufNewFile *.tf  set filetype=terraform
-
-" Настройка подсветки
-set t_Co=256
-set background=light
-" Подсветка текста, который дальше границы 79
-"match PreProc /\%>79v.\+/ " text color for border column = Preproc
+"exec "source " . g:vimrc_dir . "_plugs.vim"
+exec "source " . g:vimrc_dir . "_plugins.vim"
 exec "source " . g:vimrc_dir . "_colors.vim"
 
 " Загрузить, если есть, персональные настройки проекта
 if filereadable(".vim")
   source .vim
 endif
+
+" ====== help appendix ========
+
+" Системное меню
+"set wildmenu
+"set wildmode=full
+"source $VIMRUNTIME/delmenu.vim
+"source $VIMRUNTIME/menu.vim
+"set cpoptions-=<      "Disable the recognition of special key codes in <>
+"set wildcharm=<C-Z>
+"map <F9> :emenu <C-Z>
+
+" Настройка отдельных типов файлов, которых нет в стандартном наборе
+"au BufRead,BufNewFile *.tf  set filetype=terraform
+

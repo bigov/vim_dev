@@ -28,9 +28,9 @@ nn <F5> :so%<cr>
 ino <F5> <c-o>:w<cr><c-o>:so%<cr>
 
 "[F8] - включить/выключить панель навигации по коду
-no <F8> :TlistToggle<cr>
-nn <F8> :TlistToggle<cr>
-ino <F8> <c-o>:TlistToggle<cr>
+no <F8> :TagbarToggle<cr>
+nn <F8> :TagbarToggle<cr>
+ino <F8> <c-o>:TagbarToggle<cr>
 
 "[Ctrl-F8] - выключить выделение
 no <C-F8> :nohlsearch<cr>
@@ -42,13 +42,18 @@ no <F10> :qa<cr>
 nn <F10> :qa<cr>
 ino <F10> <c-o>:qa<cr>
 
-no <F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extras=+fq
-nn <F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extras=+fq
+"no <F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extras=+fq
+"nn <F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extras=+fq
 
+" Переключение буфера (in gui)
 map <c-PageDown> :bn<cr>
 map <c-PageUp> :bp<cr>
 imap <c-PageDown> <c-o>:bn<cr>
 imap <c-PageUp> <c-o>:bp<cr>
+" В терминале <Ctrl> не срабатывает, поэтому используем -
+map gn :bn<cr>
+map gp :bp<cr>
+map gd :TagbarClose<cr> :bd<cr>
 
 "[*] Подсветка выделения
 nn * *N

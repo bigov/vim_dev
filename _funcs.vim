@@ -1,6 +1,6 @@
 "=============================================================================
 "
-"	Вспомогательные функции для работы от 28.04.2016
+" Вспомогательные функции для работы от 28.04.2016
 "
 "=============================================================================
 
@@ -25,19 +25,6 @@ au BufRead,BufNewFile *.\(cmd\|bat\) silent exec 'e ++enc=cp866 %' |
 "endfunction
 
 " Подсветка всех слов, равных слову под/перед курсором 
-" ---------------------
-"     Вариант 1
-" ---------------------
-"augroup AutoHighlight
-"    au!
-"    au CursorHold * exe printf('match IncSearch /\V\<%s\>/',
-"			\ escape(expand('<cword>'), '/\'))
-"    setlocal updatetime=250
-"augroup END
-"hi IncSearch ctermfg=255 ctermbg=241 guifg=fg guibg=#595959
-
-" ---------------------
-"      Вариант 2
 " ---------------------
 " Highlight all instances of word under cursor, when idle.
 " Useful when studying strange source code.

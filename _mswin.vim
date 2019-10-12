@@ -6,13 +6,10 @@ endif
 
 " set 'selection', 'selectmode', 'mousemodel' and 'keymodel' for MS-Windows
 "!!!" behave mswin
-set keymodel=startsel 
+set keymodel=startsel
 
 " backspace and cursor keys wrap to previous/next line
 set backspace=indent,eol,start whichwrap+=<,>,[,]
-
-" backspace in Visual mode deletes selection
-vnoremap <BS> d
 
 " CTRL-X and SHIFT-Del are Cut
 vnoremap <C-X> "+x
@@ -24,7 +21,7 @@ vnoremap <C-Insert> "+y
 
 " SHIFT-Insert are Paste
 map <S-Insert> "+gP
-cmap <S-Insert>		<C-R>+
+cmap <S-Insert> <C-R>+
 
 " For CTRL-V to work autoselect must be off.
 " On Unix we have two selections, autoselect can be used.
@@ -55,16 +52,15 @@ onoremap <C-A> <C-C>gggH<C-O>G
 snoremap <C-A> <C-C>gggH<C-O>G
 xnoremap <C-A> <C-C>ggVG
 
-"" CTRL-Tab is Next window
-"noremap <C-Tab> <C-W>w
-"inoremap <C-Tab> <C-O><C-W>w
-"cnoremap <C-Tab> <C-C><C-W>w
-"onoremap <C-Tab> <C-C><C-W>w
+" CTRL-Tab is Next window
+noremap <C-Tab> <C-W>w
+inoremap <C-Tab> <C-O><C-W>w
+cnoremap <C-Tab> <C-C><C-W>w
+onoremap <C-Tab> <C-C><C-W>w
 
 "" CTRL-F4 is Close window
 "noremap <C-F4> <C-W>c
 "inoremap <C-F4> <C-O><C-W>c
 "cnoremap <C-F4> <C-C><C-W>c
 "onoremap <C-F4> <C-C><C-W>c
-
 
