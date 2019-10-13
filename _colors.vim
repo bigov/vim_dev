@@ -8,12 +8,13 @@ colorscheme default
 highlight VertSplit ctermfg=3 ctermbg=15 guifg=#005F87 guibg=#005F87
 
 " Колонка с номерами строк
-highlight LineNr ctermbg=24 ctermfg=255 guibg=#005F87 guifg=#eeeeee
+"highlight LineNr ctermbg=24 ctermfg=255 guibg=#005F87 guifg=#eeeeee
+highlight LineNr ctermfg=15 ctermbg=8 guifg=#f8f8f0 guibg=#465457
 
 " Подсветка номера строки на линии курсора
 set cursorline
 highlight CursorLine cterm=NONE gui=NONE ctermbg=NONE guibg=NONE
-highlight CursorLineNr term=bold cterm=bold ctermfg=254 ctermbg=31 gui=bold guifg=#e4e4e4 guibg=#0087af
+highlight CursorLineNr cterm=NONE ctermfg=0 ctermbg=LightGrey guifg=#080808 guibg=#cdcdcd
 
 " Подсветка вертикальной границы 80 символов
 highlight ColorColumn ctermbg=darkgray guibg=#F3F3FE
@@ -31,14 +32,14 @@ highlight Directory guifg=#444488 gui=bold
 highlight MatchParen guibg=bg guifg=red gui=bold
 
 " Подсветка элементов синтаксиса
-highlight PreProc ctermfg=12
+highlight PreProc ctermfg=33 guifg=#6F05B0
 highlight Comment ctermfg=248  guifg=#909090 gui=italic
 highlight Constant guifg=#3333bb ctermfg=lightgreen
 highlight Error guifg=#ff4444 guibg=NONE gui=bold,undercurl guisp=Red
-highlight Type ctermfg=darkgreen guifg=darkgreen
+highlight Type ctermfg=green guifg=darkgreen
 highlight Statement ctermfg=brown guifg=#884444 gui=bold
 highlight Identifier guifg=#444488 gui=bold
-highlight String guifg=#8888ee
+highlight String guifg=#5574F2
 
 " Подсветка текста, который дальше границы 79
 "match PreProc /\%>79v.\+/ " text color for border column = Preproc
