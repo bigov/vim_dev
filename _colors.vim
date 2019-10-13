@@ -8,12 +8,12 @@ colorscheme default
 highlight VertSplit ctermfg=3 ctermbg=15 guifg=#005F87 guibg=#005F87
 
 " Колонка с номерами строк
-highlight LineNr ctermbg=3 ctermfg=15 guibg=#005F87 guifg=#CDCDCD
+highlight LineNr ctermbg=24 ctermfg=255 guibg=#005F87 guifg=#eeeeee
 
 " Подсветка номера строки на линии курсора
 set cursorline
 highlight CursorLine cterm=NONE gui=NONE ctermbg=NONE guibg=NONE
-highlight CursorLineNr ctermfg=11 ctermbg=7 guibg=#338FBA guifg=#EFEFEF gui=bold
+highlight CursorLineNr term=bold cterm=bold ctermfg=254 ctermbg=31 gui=bold guifg=#e4e4e4 guibg=#0087af
 
 " Подсветка вертикальной границы 80 символов
 highlight ColorColumn ctermbg=darkgray guibg=#F3F3FE
