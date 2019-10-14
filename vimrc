@@ -8,11 +8,10 @@ set nocompatible
 set number
 syntax enable
 set noguipty "Make external commands work through a pipe instead of a pseudo-tty
-
 set encoding=utf-8
+source $VIMRUNTIME/delmenu.vim " Удаление меню в кодировке cp1251 (Windows)
 set langmenu=ru_RU.UTF-8
 let $LANG='ru_RU'
-
 set fileencodings=utf-8,cp1251,cp866,koi8-r
 set fileformat=unix
 set hidden
