@@ -9,6 +9,9 @@ Plug 'majutsushi/tagbar'
 Plug 'vim-syntastic/syntastic'
 Plug 'maralla/completor.vim'
 Plug 'derekwyatt/vim-fswitch' "[F4] перекл. между определениями и объявлениями
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+
 " Initialize plugin system
 call plug#end()
 
@@ -60,4 +63,10 @@ let OmniCpp_MayCompleteArrow = 1 " autocomplete after ->
 let OmniCpp_MayCompleteScope = 1 " autocomplete after ::
 au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 set completeopt=menuone,menu,longest
+
+" Vim-markdown
+" ----------------------------------------------------------
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_fenced_languages = ['c++=cpp', 'viml=vim', 'bash=sh', 'ini=dosini', 'csharp=cs']
+let g:vim_markdown_autowrite = 1
 
