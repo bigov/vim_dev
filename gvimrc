@@ -5,7 +5,7 @@
 set antialias
 set guioptions-=T
 set lines=64
-set columns=112
+set columns=124
 
 if has('win32')
   set guifont=DejaVu_Sans_Mono_for_Powerline:h9:cRUSSIAN:qDRAFT

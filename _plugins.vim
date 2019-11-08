@@ -11,6 +11,7 @@ Plug 'maralla/completor.vim'
 Plug 'derekwyatt/vim-fswitch' "[F4] перекл. между определениями и объявлениями
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
+"Plug 'Valloric/YouCompleteMe'
 
 " Initialize plugin system
 call plug#end()

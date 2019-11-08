@@ -26,3 +26,14 @@ if which fc-cache >/dev/null 2>&1 ; then
 fi
 
 echo "Powerline fonts installed to $font_dir"
+
+# Directory for plugins
+mkdir ~/vim-packs
+
+# Download module Vim-Plug
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+# Automatic install plugins
+vim -c PlugInstall
+
