@@ -44,3 +44,39 @@
 [submodule "pack/bigov/opt/glsl.vim"]
 	path = pack/bigov/opt/glsl.vim
 	url = https://github.com/beyondmarc/glsl.vim.git
+[submodule "pack/git/opt/glsl.vim"]
+	path = pack/git/opt/glsl.vim
+	url = https://github.com/beyondmarc/glsl.vim.git
+[submodule "pack/git/opt/vim-airline"]
+	path = pack/git/opt/vim-airline
+	url = https://git::@github.com/vim-airline/vim-airline.git
+[submodule "pack/git/opt/vim-airline-themes"]
+	path = pack/git/opt/vim-airline-themes
+	url = https://git::@github.com/vim-airline/vim-airline-themes.git
+[submodule "pack/git/opt/syntastic"]
+	path = pack/git/opt/syntastic
+	url = https://git::@github.com/vim-syntastic/syntastic.git
+[submodule "pack/git/opt/completor.vim"]
+	path = pack/git/opt/completor.vim
+	url = https://git::@github.com/maralla/completor.vim.git
+[submodule "pack/git/opt/tabular"]
+	path = pack/git/opt/tabular
+	url = https://git::@github.com/godlygeek/tabular.git
+[submodule "pack/git/opt/tagbar"]
+	path = pack/git/opt/tagbar
+	url = https://git::@github.com/majutsushi/tagbar.git
+[submodule "pack/git/opt/vim-fswitch"]
+	path = pack/git/opt/vim-fswitch
+	url = https://git::@github.com/derekwyatt/vim-fswitch.git
+[submodule "pack/git/opt/vim-markdown"]
+	path = pack/git/opt/vim-markdown
+	url = https://git::@github.com/plasticboy/vim-markdown.git
+[submodule "pack/git/opt/vim-fugitive"]
+	path = pack/git/opt/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
+[submodule "pack/git/opt/vim-pathogen"]
+	path = pack/git/opt/vim-pathogen
+	url = https://github.com/tpope/vim-pathogen.git
+[submodule "bundle/vim-airline"]
+	path = bundle/vim-airline
+	url = https://git::@github.com/vim-airline/vim-airline.git

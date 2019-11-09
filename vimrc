@@ -42,6 +42,7 @@ set splitright               " Открываем вертикальные ок�
 
 filetype on                  " Vim filetype   detection
 filetype plugin on           " Vim plugins system
+filetype plugin indent on
 
 if has('win32')
   let g:vimrc_dir=$HOME . '\vimfiles\'
@@ -71,7 +72,4 @@ endif
 "set cpoptions-=<      "Disable the recognition of special key codes in <>
 "set wildcharm=<C-Z>
 "map <F9> :emenu <C-Z>
-
-" Настройка отдельных типов файлов, которых нет в стандартном наборе
-"au BufRead,BufNewFile *.tf  set filetype=terraform
 
