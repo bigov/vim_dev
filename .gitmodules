@@ -38,3 +38,9 @@
 [submodule "pack/plugins/start/rust.vim"]
 	path = pack/plugins/start/rust.vim
 	url = https://github.com/rust-lang/rust.vim
+[submodule "pack/glsl.vim"]
+	path = pack/glsl.vim
+	url = https://github.com/beyondmarc/glsl.vim.git
+[submodule "pack/bigov/opt/glsl.vim"]
+	path = pack/bigov/opt/glsl.vim
+	url = https://github.com/beyondmarc/glsl.vim.git
