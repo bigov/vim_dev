@@ -40,14 +40,19 @@ foreach ($fontFile in $fontFiles) {
     }
 }
 
-md ~\vim-packs
-md ~\vimfiles\autoload
-$uri = 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-(New-Object Net.WebClient).DownloadFile(
-  $uri,
-  $ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath(
-    "~\vimfiles\autoload\plug.vim"
-  )
-)
+git submodule update --init
 
-gvim -c PlugInstall
+## Предыдущая версия предполагала использование модуля VimPlug. Сейчас она уже
+## не используется. Текст ниже оставлен просто для примера, как при помощи
+## скрипта PowerShell можно скачать из Интернета файл:
+##
+#md ~\vim-packs
+#md ~\vimfiles\autoload
+#$uri = 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+#(New-Object Net.WebClient).DownloadFile(
+#  $uri,
+#  $ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath(
+#    "~\vimfiles\autoload\plug.vim"
+#  )
+#)
+
