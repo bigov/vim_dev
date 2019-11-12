@@ -41,6 +41,8 @@ foreach ($fontFile in $fontFiles) {
 }
 
 git submodule update --init
+vim -c make_helptags.vim -c q
+
 
 ## Предыдущая версия предполагала использование модуля VimPlug. Сейчас она уже
 ## не используется. Текст ниже оставлен просто для примера, как при помощи
