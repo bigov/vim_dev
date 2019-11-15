@@ -28,5 +28,5 @@ fi
 echo "Powerline fonts installed to $font_dir"
 
 git submodule update --init
-vim -c makehelptags.vim -c q
+vim -c "source makehelptags.vim" -c q
 
