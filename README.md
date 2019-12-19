@@ -1,8 +1,8 @@
-# Пользовательская конфигурация для VIM
+# Пользовательская конфигурация для Vim
 
 ## Порядок установки
 
- - Устанавить VIM (последний релиз: https://github.com/vim/vim-win32-installer/releases/latest)
+ - Устанавить Vim (для платформы "win32" последнюю сборку можно взять тут: https://github.com/vim/vim-win32-installer/releases/latest)
  - Загрузить репозиторий в папку "~/.vim" или "%USERPROFILE%/vimfiles"
  - Запустить "assets/install"
 
