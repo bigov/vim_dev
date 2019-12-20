@@ -3,9 +3,9 @@
 
 ## Порядок установки
 
- - Устанавить Vim (для платформы "win32" последнюю сборку можно взять тут: https://github.com/vim/vim-win32-installer/releases/latest)
- - Загрузить репозиторий в папку "~/.vim" или "%USERPROFILE%/vimfiles"
- - Запустить "assets/install"
+ - Установить Python (используется плагином syntastic) и свежую сборку Vim. Для платформы "win32" последнюю сборку Vim можно взять тут: https://github.com/vim/vim-win32-installer/releases/latest);
+ - Загрузить содержимое этого репозитория в папку (в зависимости от Вашей платформы) "~/.vim" или "%USERPROFILE%/vimfiles";
+ - Перейти в папку "assets" и запустить из нее скрипт "install";
  - В настройке терминальных программ, в которых будет использоваться Vim, для вывода символов установите TTF шрифт "DejaVu Sans Mono Bold for Powerline" (он появится в системе после запуска "assets/install").
 
 ## Особенности конфигурации
