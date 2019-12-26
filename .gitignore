@@ -5,3 +5,4 @@ hgup.log
 .hg
 .hgignore
 ^swap
+*.stackdump
