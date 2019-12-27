@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
     Installs the provided fonts.
 .DESCRIPTION
@@ -23,26 +23,10 @@ param(
     $FontName = '*'
 )
 
-$fontFiles = New-Object 'System.Collections.Generic.List[System.IO.FileInfo]'
-foreach ($aFontName in $FontName) {
-    Get-ChildItem $PSScriptRoot -Filter "${aFontName}.ttf" -Recurse | Foreach-Object {$fontFiles.Add($_)}
-    Get-ChildItem $PSScriptRoot -Filter "${aFontName}.otf" -Recurse | Foreach-Object {$fontFiles.Add($_)}
-}
-
-$fonts = $null
-foreach ($fontFile in $fontFiles) {
-    if ($PSCmdlet.ShouldProcess($fontFile.Name, "Install Font")) {
-        if (!$fonts) {
-            $shellApp = New-Object -ComObject shell.application
-            $fonts = $shellApp.NameSpace(0x14)
-        }
-        $fonts.CopyHere($fontFile.FullName)
-    }
-}
+Start-Process powershell -ArgumentList ('$OSFonts=((New-Object -ComObject shell.application).NameSpace(0x14)); Get-ChildItem -Path {0} -Recurse | Foreach-Object {{$OSFonts.CopyHere($_.FullName)}}' -f ($PSScriptRoot + '\' + $FontName + '.[ot]tf')) -WindowStyle Hidden -Wait -Verb RunAs
 
 git submodule update --init
 vim -c make_helptags.vim -c q
-
 
 ## Предыдущая версия предполагала использование модуля VimPlug. Сейчас она уже
 ## не используется. Текст ниже оставлен просто для примера, как при помощи
