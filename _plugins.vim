@@ -37,13 +37,14 @@ packadd vim-fswitch "[F4] перекл. между определениями и
 " Плагин автодополнение
 "https://github.com/maralla/completor.vim.git
 " -----------------------------------------------------------------------------
-packadd completor.vim
-let g:completor_clang_binary = 'clang'
-let g:completor_auto_trigger = 0
-let g:completor_auto_trigger = 0
+"packadd completor.vim
+"let g:completor_python_binary = 'w:/exe/msys/mingw64/bin/python3.exe'
+"let g:completor_clang_binary = 'clang'
+"let g:completor_auto_trigger = 0
+"let g:completor_auto_trigger = 0
 "let g:completor_complete_options = 'menuone,noselect,preview'
-let g:completor_complete_options = 'menuone,noselect'
-let g:completor_def_split = 'vsplit'
+"let g:completor_complete_options = 'menuone,noselect'
+"let g:completor_def_split = 'vsplit'
 " Дополнительная настройка использования клавиши Tab
 "exec "source " . g:vimrc_dir . "_complete_by_tab.vim"
 
