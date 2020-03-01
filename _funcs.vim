@@ -8,8 +8,7 @@
 au BufRead,BufNewFile *.vim setlocal ff=unix
 
 " Автоматическое назначение формата и кодировки для пакетных файлов MS-Windows
-au BufRead,BufNewFile *.\(cmd\|bat\) silent exec 'e ++enc=cp866 %' |
- \ setlocal ff=dos | syntax on
+au BufRead,BufNewFile *.\(cmd\|bat\) silent exec 'e ++enc=cp866 %' | setlocal ff=dos
 
 ""[TAB] авто-дополнение для текущего активного синтаксиса
 "function! InsertTabWrapper(direction)
