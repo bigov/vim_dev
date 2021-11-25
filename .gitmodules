@@ -74,6 +74,7 @@
 [submodule "pack/git/opt/vim-fugitive"]
 	path = pack/git/opt/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
+	branch = master
 [submodule "pack/git/opt/vim-pathogen"]
 	path = pack/git/opt/vim-pathogen
 	url = https://github.com/tpope/vim-pathogen.git
