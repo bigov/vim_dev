@@ -37,7 +37,8 @@ highlight Comment ctermfg=248  guifg=#909090 gui=italic
 highlight Constant guifg=#3333bb ctermfg=lightgreen
 highlight Error guifg=#ff4444 guibg=NONE gui=bold,undercurl guisp=Red
 highlight Type ctermfg=green guifg=darkgreen
-highlight Statement ctermfg=brown guifg=#884444 gui=bold
+"highlight Statement ctermfg=brown guifg=#884444 gui=bold
+highlight Statement ctermfg=lightyellow guifg=#884444 gui=bold
 highlight Identifier guifg=#444488 gui=bold
 highlight String guifg=#5574F2
 
