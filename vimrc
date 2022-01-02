@@ -55,7 +55,7 @@ exec "source " . g:vimrc_dir . "_funcs.vim"
 exec "source " . g:vimrc_dir . "_keys.vim"
 exec "source " . g:vimrc_dir . "_plugins.vim"
 
-exec "source " . g:vimrc_dir . "_colors_light.vim"
+colorscheme bigovlight
 
 " Загрузить, если есть, персональные настройки проекта
 if filereadable(".vim")
