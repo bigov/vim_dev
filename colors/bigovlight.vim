@@ -37,7 +37,7 @@ highlight SpecialKey guifg=#bbbbff ctermfg=252
 highlight Comment ctermfg=246  guifg=#909090 gui=italic
 highlight Function ctermfg=88 cterm=none
 highlight Type ctermfg=28 guifg=darkgreen
-highlight String ctermfg=26 guifg=#5574F2 cterm=italic
+highlight String ctermfg=26 guifg=#1386C6 cterm=italic
 highlight PreProc ctermfg=33 guifg=#6F05B0
 highlight Keyword ctermfg=64 cterm=bold
 highlight Conditional cterm=bold ctermfg=160
@@ -45,4 +45,4 @@ highlight Operator cterm=none ctermfg=21
 highlight Include ctermfg=26
 highlight Identifier ctermfg=26 cterm=bold guifg=#444488 gui=bold
 highlight Special ctermfg=26 guifg=#005fd7
-
+highlight Number guifg=red gui=bold
