@@ -84,3 +84,6 @@
 [submodule "pack\\git\\opt\\vim.macaw"]
 	path = pack\\git\\opt\\vim.macaw
 	url = https://github.com/urbainvaes/vim-macaw.git
+[submodule "pack\\git\\opt\\vim-atomic"]
+	path = pack\\git\\opt\\vim-atomic
+	url = https://github.com/gerardbm/vim-atomic.git

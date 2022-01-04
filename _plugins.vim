@@ -88,6 +88,11 @@ packadd glsl.vim
 packadd vim-fugitive
 autocmd BufReadPost fugitive://* set bufhidden=delete
 
+" -----------------------------------------------------------------------------
+" Цветовая тема Atomic
+" -----------------------------------------------------------------------------
+packadd vim-atomic
+
 "******************************************************************************
 " Vim-pathogen
 " используется для подключения плагина Vim-airline, так как
@@ -103,7 +108,7 @@ execute pathogen#infect()
 " и находится в отдельном каталоге: '$VIMRUNTIME$/bundle'
 " -----------------------------------------------------------------------------
 packadd vim-airline-themes
-let g:airline_theme='molokai'
+let g:airline_theme='atomic'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
@@ -114,4 +119,4 @@ let g:airline#extensions#tabline#enabled = 1
 " Выход q
 " После выхода можно записать строку в открытый файл командой :MacawWrite
 " -----------------------------------------------------------------------------
-packadd vim.macaw
+"packadd vim.macaw

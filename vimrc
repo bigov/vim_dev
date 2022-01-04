@@ -17,16 +17,12 @@ set fileformat=unix
 set hidden
 set mouse=a
 set showmode
-
 set showcmd
 set allowrevins
 set expandtab          " To insert a real tab use CTRL-V<Tab>
 set tabstop=2
 set shiftwidth=2       " ширина сдвига строк по команде ">"
 set wrap               " залом строки по границе окна
-set textwidth=0
-set cc=+2 " show the right border column on number = textwidth+1
-set cc=80 " Когда textwidth=0, то маркера не видно, поэтому ставим число
 set cmdheight=2
 set laststatus=2
 set backspace=2
@@ -55,7 +51,31 @@ exec "source " . g:vimrc_dir . "_funcs.vim"
 exec "source " . g:vimrc_dir . "_keys.vim"
 exec "source " . g:vimrc_dir . "_plugins.vim"
 
-colorscheme bigovlight
+colorscheme atomic
+exec "AtomicLightHard"
+
+hi Normal guibg=white guifg=grey16 gui=NONE ctermbg=255 ctermfg=16
+
+set cursorline
+hi LineNr ctermfg=254 ctermbg=67 guifg=gray80 guibg=white
+hi CursorLine cterm=NONE gui=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
+hi CursorLineNr cterm=NONE ctermfg=67 ctermbg=253 guifg=gray50 guibg=gray90 gui=NONE
+
+" Подсветка вертикальной границы 80 символов
+set textwidth=0
+set cc=+2 " show the right border column on number = textwidth+1
+set cc=80 " Когда textwidth=0, то маркера не видно, поэтому ставим число
+hi ColorColumn ctermbg=255 guibg=grey94
+
+" Подсветка пробелов и табов
+set list
+set listchars=tab:‣\ ,trail:·,precedes:«,extends:»
+hi SpecialKey guifg=lightblue3 ctermfg=252
+
+" Настройка строки статуса (для строки "airline" настроена своя тема)
+set statusline=[%n]\ %<%f\ [%Y%R,%{&ff},%{&fenc}%W]%=%m\ %03l/%03L\ [%03v\ %03b]
+"highlight StatusLine ctermfg=242 ctermbg=15 guifg=gray24
+"highlight StatusLineNC ctermfg=250 ctermbg=8 guifg=gray24
 
 " Загрузить, если есть, персональные настройки проекта
 if filereadable(".vim")
