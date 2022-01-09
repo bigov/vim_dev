@@ -1,6 +1,6 @@
 "=============================================================================
 "
-" Вспомогательные функции для работы от 28.04.2016
+" Вспомогательные функции для работы от 04.01.2022
 "
 "=============================================================================
 
@@ -24,12 +24,7 @@ au BufRead,BufNewFile *.\(cmd\|bat\) silent exec 'e ++enc=cp866 %' | setlocal ff
 "endfunction
 
 " Подсветка всех слов, равных слову под/перед курсором 
-" ---------------------
-" Highlight all instances of word under cursor, when idle.
-" Useful when studying strange source code.
-" Type z/ to toggle highlighting on/off.
 nnoremap <C-S> :if AutoHighlightToggle()<Bar>set hls<Bar>endif<CR>
-inoremap <C-S> <ESC>:call AutoHighlightOn()<CR>
 
 function! AutoHighlightToggle()
   let @/ = ''
@@ -85,4 +80,13 @@ function! s:ShowCurrentColors()
     \>:SignColumn,B:SpellBad,P:SpellCap,R:SpellRare,L:SpellLocal,-:Conceal,
     \+:Pmenu,=:PmenuSel,x:PmenuSbar,X:PmenuThumb"
 endfunction
+
+" Show syntax highlighting groups for word under cursor
+nmap <C-S-P> :call <SID>SynStack()<CR>
+function! <SID>SynStack()
+  if !exists("*synstack")
+    return
+  endif
+  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
 

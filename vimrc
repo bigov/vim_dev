@@ -1,43 +1,65 @@
 "----------------------------------------------------------------------------"
-"
-" Edited: 12.10.2019
-"
+" Details here: https://vimhelp.org/options.txt.html
+" Edited: 09.01.2022
 "----------------------------------------------------------------------------"
-"
 set nocompatible
-set number
-syntax enable
-set noguipty "Make external commands work through a pipe instead of a pseudo-tty
+
 set encoding=utf-8
-source $VIMRUNTIME/delmenu.vim " Удаление меню в кодировке cp1251 (Windows)
-set langmenu=ru_RU.UTF-8
-let $LANG='ru_RU'
-set fileencodings=utf-8,cp1251,cp866,koi8-r
 set fileformat=unix
-set hidden
+set langmenu=ru_RU.UTF-8
+set fileencodings=utf-8,cp1251,cp866,koi8-r
+let $LANG='ru_RU'
 set mouse=a
+set noguipty "Make external commands work through a pipe instead of a pseudo-tty
+
+set number
 set showmode
 set showcmd
-set allowrevins
-set expandtab          " To insert a real tab use CTRL-V<Tab>
-set tabstop=2
-set shiftwidth=2       " ширина сдвига строк по команде ">"
-set wrap               " залом строки по границе окна
 set cmdheight=2
 set laststatus=2
-set backspace=2
-set incsearch          " Инкрементальный поиск (в процессе набора)
-set hlsearch           " Подсвечивание результатов поиска
-nohlsearch
-set foldenable
-set foldmethod=manual  "marker | indent | manual | expr | syntax | diff
-set autoindent               " автоотступ для новой строки
-set smartindent              " добавление отступов, когда необходимо
-set completeopt=menu         " чтоб сверху окном не хлопало
-set splitright               " Открываем вертикальные окна справа
+set nowrap                      "залом строки по границе окна
 
-filetype on                  " Vim filetype   detection
-filetype plugin on           " Vim plugins system
+set expandtab                   "To insert a real tab use CTRL-V<Tab>
+set softtabstop=2
+set shiftwidth=4                "ширина сдвига строк по команде ">"
+"set tabstop=8                  "по-умолчанию = 8
+"set showtabline=2              "Всегда видна
+
+set incsearch                   "Инкрементальный поиск (в процессе набора)
+set hlsearch                    "Подсвечивание результатов поиска
+nohlsearch
+
+set splitright                  " Открываем вертикальные окна справа
+set foldenable
+set foldmethod=manual           "marker | indent | manual | expr | syntax | diff
+set autoindent                  "автоотступ для новой строки
+set smartindent                 "добавление отступов, когда необходимо
+"set backspace=indent,eol,nostop "https://vimhelp.org/options.txt.html#%27backspace%27
+" backspace and cursor keys wrap to previous/next line
+set backspace=indent,eol,start 
+set whichwrap+=<,>,[,]
+set keymodel=startsel  "Set 'selection','selectmode','mousemodel' and 'keymodel' for MS-Windows
+
+set cursorcolumn
+au WinEnter * set cursorcolumn
+au WinLeave * set nocursorcolumn
+
+set cursorline
+au WinEnter * set cursorline
+au WinLeave * set nocursorline
+
+" Подсветка пробелов, табов и др. символов
+set list
+set listchars=tab:‣\ ,trail:·,precedes:«,extends:»
+"set listchars=tab:‣\ ,trail:·,precedes:«,extends:»
+
+" Подсветка вертикальной границы 80 символов
+set textwidth=0
+set cc=+2 " show the right border column on number = textwidth+1
+set cc=80 " Когда textwidth=0, то маркера не видно, поэтому ставим число
+
+filetype on                      "Vim filetype detection
+filetype plugin on               "Vim plugins system
 filetype plugin indent on
 
 if has('win32')
@@ -46,50 +68,30 @@ else
   let g:vimrc_dir=$HOME . '/.vim/'
 endif
 
-exec "source " . g:vimrc_dir . "_mswin.vim"
-exec "source " . g:vimrc_dir . "_funcs.vim"
+exec "source " . g:vimrc_dir . "_plug.vim"
+exec "source " . g:vimrc_dir . "_func.vim"
 exec "source " . g:vimrc_dir . "_keys.vim"
-exec "source " . g:vimrc_dir . "_plugins.vim"
 
-colorscheme atomic
-exec "AtomicLightHard"
+" Настройка строки статуса
+set statusline=[%n]\ %<%f\ [%Y%R,%{&ff},%{&fenc}%W]\ %{FugitiveStatusline()}%=%m\ %03l/%03L\ [%03v\ %03b]
 
-hi Normal guibg=white guifg=grey16 gui=NONE ctermbg=255 ctermfg=16
-
-set cursorline
-hi LineNr ctermfg=254 ctermbg=67 guifg=gray80 guibg=white
-hi CursorLine cterm=NONE gui=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
-hi CursorLineNr cterm=NONE ctermfg=67 ctermbg=253 guifg=gray50 guibg=gray90 gui=NONE
-
-" Подсветка вертикальной границы 80 символов
-set textwidth=0
-set cc=+2 " show the right border column on number = textwidth+1
-set cc=80 " Когда textwidth=0, то маркера не видно, поэтому ставим число
-hi ColorColumn ctermbg=255 guibg=grey94
-
-" Подсветка пробелов и табов
-set list
-set listchars=tab:‣\ ,trail:·,precedes:«,extends:»
-hi SpecialKey guifg=lightblue3 ctermfg=252
-
-" Настройка строки статуса (для строки "airline" настроена своя тема)
-set statusline=[%n]\ %<%f\ [%Y%R,%{&ff},%{&fenc}%W]%=%m\ %03l/%03L\ [%03v\ %03b]
-"highlight StatusLine ctermfg=242 ctermbg=15 guifg=gray24
-"highlight StatusLineNC ctermfg=250 ctermbg=8 guifg=gray24
+syntax enable
+colorscheme bigovlight
 
 " Загрузить, если есть, персональные настройки проекта
 if filereadable(".vim")
   source .vim
 endif
 
+helptags ALL
 " ====== help appendix ========
 
-" Системное меню
-"set wildmenu
-"set wildmode=full
-"source $VIMRUNTIME/delmenu.vim
-"source $VIMRUNTIME/menu.vim
-"set cpoptions-=<      "Disable the recognition of special key codes in <>
-"set wildcharm=<C-Z>
-"map <F9> :emenu <C-Z>
+"set hidden
+"set allowrevins
+"set completeopt=menu         " чтоб сверху окном не хлопало
 
+"set wildmenu          " Системное меню
+"set wildmode=full
+"set cpoptions-=<      "Disable the recognition of special key codes in <>
+"set wildcharm=<C-Z>   
+"map <F9> :emenu <C-Z>

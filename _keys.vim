@@ -5,27 +5,31 @@
 " Чтоб не было задержки при восстановлении в режиме вставки
 inoremap <C-o>u <C-o>u
 
-" Используемая для вставки в MS-Windows комбинация Ctrl+V в редакторе Vim
-" по-умолчанию назначена на операцию выделения вертикального блока. Но
-" при желании ее можно переназначить для вставки -
-"ino <C-v> <Esc> "+gPa
-"no  <C-v> "+gP
+" Переключение буфера
+map <Space>n :w<cr>:bn<cr>
+map <Space>p :w<cr>:bp<cr>
+map <Space>d :bd!<cr>
 
-"[F2] - сохранить содержимое из текущего буфера в файл
+" Open Terminal
+map <Space>t :terminal<cr>
+
+"[F2] (<Ctrl>+S) - сохранить содержимое из текущего буфера в файл
 ino <F2> <Esc>:write<cr>a
+ino <C-S> <Esc>:write<cr>a
 map <F2> :write<cr>
+map <C-S> :write<cr>
 
-"[F3] - открыть файл
-ino <F3> <c-o>:Explore<cr>
-map <F3> :Explore<cr>
+"[F3] Execute current file as vim-script
+nn <F3> :so%<cr>
+ino <F3> <c-o>:w<cr><c-o>:so%<cr>
 
 "[F4] Переключени между файлами определений и объявлений
 nn <F4> :FSHere<cr>
 ino <F4> <c-o>:FSHere<cr>
 
-"[F5] Выполнить файл как скрипт
-nn <F5> :so%<cr>
-ino <F5> <c-o>:w<cr><c-o>:so%<cr>
+"[F6] Dialog for open new file
+ino <F6> <c-o>:Explore<cr>
+map <F6> :Explore<cr>
 
 "[F8] - включить/выключить панель навигации по коду
 no <F8> :TagbarToggle<cr>
@@ -42,18 +46,26 @@ no <F10> :qa<cr>
 nn <F10> :qa<cr>
 ino <F10> <c-o>:qa<cr>
 
-"no <F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extras=+fq
-"nn <F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extras=+fq
+no <F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extras=+fq
+nn <F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extras=+fq
 
-" Переключение буфера (in gui)
-map <c-PageDown> :bn<cr>
-map <c-PageUp> :bp<cr>
-imap <c-PageDown> <c-o>:bn<cr>
-imap <c-PageUp> <c-o>:bp<cr>
-" В терминале <Ctrl> не срабатывает, поэтому используем -
-map gn :bn<cr>
-map gp :bp<cr>
-map gd :TagbarClose<cr> :bd<cr>
+" CTRL-X and SHIFT-Del are Cut
+vnoremap <C-X> "+x
+vnoremap <S-Del> "+x
+
+" CTRL-C and CTRL-Insert are Copy
+vnoremap <C-C> "+y
+vnoremap <C-Insert> "+y
+
+" SHIFT-Insert are Paste
+map <S-Insert> "+gP
+cmap <S-Insert> <C-R>+
+
+" Используемая для вставки в MS-Windows комбинация Ctrl+V в редакторе Vim
+" по-умолчанию назначена на операцию выделения вертикального блока. Но
+" при желании ее можно переназначить для вставки:
+"ino <C-v> <Esc> "+gPa
+"no  <C-v> "+gP
 
 "[*] Подсветка выделения
 nn * *N
@@ -66,13 +78,4 @@ menu Encoding.windows-1251 :e ++enc=cp1251 ++ff=dos<CR>
 menu Encoding.cp866 :e ++enc=cp866 ++ff=dos<CR>
 menu Encoding.utf-8 :e ++enc=utf8 <CR>
 map <F9> :emenu Encoding.<TAB>
-
-" Show syntax highlighting groups for word under cursor
-nmap <C-S-P> :call <SID>SynStack()<CR>
-function! <SID>SynStack()
-  if !exists("*synstack")
-    return
-  endif
-  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
-endfunc
 

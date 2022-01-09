@@ -1,5 +1,6 @@
 _
 .netrwhist
+.git
 *.swp
 hgup.log
 .hg

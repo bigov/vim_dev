@@ -8,7 +8,10 @@
 "   git submodule foreach git pull origin master
 " =============================================================================
 
-packadd tagbar
+" -----------------------------------------------------------------------------
+"  useful to line up text
+"  git://github.com/godlygeek/tabular.git
+" -----------------------------------------------------------------------------
 packadd tabular
 
 " -----------------------------------------------------------------------------
@@ -64,6 +67,7 @@ set completeopt=menuone,menu,longest
 
 " -----------------------------------------------------------------------------
 " Vim-markdown
+" git submodule add --depth=1 https://github.com/plasticboy/vim-markdown.git
 " -----------------------------------------------------------------------------
 packadd vim-markdown
 let g:vim_markdown_folding_disabled = 1
@@ -88,35 +92,91 @@ packadd glsl.vim
 packadd vim-fugitive
 autocmd BufReadPost fugitive://* set bufhidden=delete
 
-" -----------------------------------------------------------------------------
-" Цветовая тема Atomic
-" -----------------------------------------------------------------------------
-packadd vim-atomic
+"------------------------------------------------------------------------------
+" allows to use <Tab> for all insert completion needs (:help ins-completion)
+" git submodule add --depth=1 https://github.com/ervandew/supertab.git
+" :help supertab
+"------------------------------------------------------------------------------
+packadd supertab
 
-"******************************************************************************
-" Vim-pathogen
-" используется для подключения плагина Vim-airline, так как
-" последний не подключается корректно через стандартную систему
-" плагинов VIM
-" -----------------------------------------------------------------------------
-packadd vim-pathogen
-execute pathogen#infect()
+"------------------------------------------------------------------------------
+" Path navigator designed to work with Vim's built-in mechanisms
+" and complementary plugins.
+" https://github.com/justinmk/vim-dirvish.git
+"
+" Вызов списка файлов по-умолчанию производится нажатием '-'
+"------------------------------------------------------------------------------
+packadd vim-dirvish
+
+"------------------------------------------------------------------------------
+" https://github.com/vimwiki/vimwiki.git
+" https://github.com/vimwiki/utils.git
+"------------------------------------------------------------------------------
+packadd vimwiki
+
+if has('win32')
+  let s:PyCtagsBin = g:vimrc_dir. '\pack\git\opt\vimwiki-utils\vwtags.py'
+else
+  let s:PyCtagsBin = g:vimrc_dir. '/pack/git/opt/vimwiki-utils/vwtags.py'
+endif
+
+let g:tagbar_type_vimwiki = {
+          \   'ctagstype': 'vimwiki'
+          \ , 'kinds': ['h:header']
+          \ , 'sro': '&&&'
+          \ , 'kind2scope': {'h':'header'}
+          \ , 'sort': 0
+          \ , 'ctagsbin': s:PyCtagsBin
+          \ , 'ctagsargs': 'default'
+          \ }
+
+"------------------------------------------------------------------------------
+" https://github.com/preservim/tagbar.git
+"------------------------------------------------------------------------------
+packadd tagbar
 
 " -----------------------------------------------------------------------------
-" Настройка AIRLINE плагина
-" Не пишем 'packadd vim-airline', так как он подключен через Vim-pathogen
-" и находится в отдельном каталоге: '$VIMRUNTIME$/bundle'
+" Дополнения для подсветки синтаксиса C/C++ исходных файлов
+" url = https://github.com/bfrg/vim-cpp-modern.git
 " -----------------------------------------------------------------------------
-packadd vim-airline-themes
-let g:airline_theme='atomic'
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
+packadd vim-cpp-modern
+
+"------------------------------------------------------------------------------
+" SHOULD BE
+"------------------------------------------------------------------------------
+" Фоновая проверка синтаксиса: https://github.com/dense-analysis/ale
+"------------------------------------------------------------------------------
+
+"------------------------------------------------------------------------------
+" Плагин отображения имен файлов открытых буферов в зоне tabline
+" url = https://github.com/mg979/vim-xtabline.git
+" XTabline theme
+" -----------------------------------------------------------------------------
+"XTFill       - цвет панели
+"XTSelect     - активная вкладка
+"XTSelectMod  - индикатор изменения
+"XTNumSel     - номер активной вкладки
+"XTHidden     - неактивная вкладка
+"XTHiddenMod  - индикатор изменения
+"XTNum номер  - неактивной вкладки
+"XTExtra      - текущий режим
+"XTExtraMod
+"XTCorner     - название текущей папки
+"XTVisibleMod - несохраненные изменения (*)
+"XTVisible    - неактивное окно
+"XTSpecial    - специальные окна (NerdTree...)
+"------------------------------------------------------------------------------
+"packadd vim-xtabline
+"let g:xtabline_settings.tab_number_in_left_corner = 1
+":silent! XTabMode buffers
 
 " -----------------------------------------------------------------------------
+"  https://github.com/urbainvaes/vim-macaw.git
 " Интерактивное изменение цветов подсветки синтаксиса
 " Вызов поизводится сочтанием |yc|
 " переключение Fg/Bg - клавиша B
 " Выход q
 " После выхода можно записать строку в открытый файл командой :MacawWrite
 " -----------------------------------------------------------------------------
-"packadd vim.macaw
+"packadd vim-macaw
+

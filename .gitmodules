@@ -87,3 +87,21 @@
 [submodule "pack/git/opt/vim-atomic"]
 	path = pack/git/opt/vim-atomic
 	url = https://github.com/gerardbm/vim-atomic.git
+[submodule "pack/git/opt/vim-cpp-modern"]
+	path = pack/git/opt/vim-cpp-modern
+	url = https://github.com/bfrg/vim-cpp-modern.git
+[submodule "pack/git/opt/vimwiki"]
+	path = pack/git/opt/vimwiki
+	url = https://github.com/vimwiki/vimwiki.git
+[submodule "pack/git/opt/utils"]
+	path = pack/git/opt/utils
+	url = https://github.com/vimwiki/utils.git
+[submodule "pack/git/opt/vimwiki-utils"]
+	path = pack/git/opt/vimwiki-utils
+	url = https://github.com/vimwiki/utils.git
+[submodule "pack/git/opt/vim-dirvish"]
+	path = pack/git/opt/vim-dirvish
+	url = https://github.com/justinmk/vim-dirvish.git
+[submodule "pack/git/opt/supertab"]
+	path = pack/git/opt/supertab
+	url = https://github.com/ervandew/supertab.git
