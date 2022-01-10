@@ -105,3 +105,6 @@
 [submodule "pack/git/opt/supertab"]
 	path = pack/git/opt/supertab
 	url = https://github.com/ervandew/supertab.git
+[submodule "pack/git/opt/matchit"]
+	path = pack/git/opt/matchit
+	url = https://github.com/chrisbra/matchit.git

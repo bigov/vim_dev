@@ -95,3 +95,7 @@ helptags ALL
 "set cpoptions-=<      "Disable the recognition of special key codes in <>
 "set wildcharm=<C-Z>   
 "map <F9> :emenu <C-Z>
+
+"------------------------------------------------------------------------------
+" vim: textwidth=80 wrap tabstop=4 shiftwidth=2 softtabstop=2
+" vim: foldmethod=marker fenc=utf-8 ff=unix

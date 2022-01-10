@@ -15,6 +15,17 @@
 packadd tabular
 
 " -----------------------------------------------------------------------------
+" The matchit plugin makes the % command work better, but it is not backwards
+" compatible.
+" The ! means the package won't be loaded right away but when plugins are
+" loaded during initialization.
+" git submodule add https://github.com/chrisbra/matchit.git
+" -----------------------------------------------------------------------------
+if has('syntax') && has('eval')
+  packadd! matchit
+endif
+
+" -----------------------------------------------------------------------------
 " Проверка синтаксиса при помощи плагина syntastic
 " https://github.com/vim-syntastic/syntastic
 " -----------------------------------------------------------------------------
