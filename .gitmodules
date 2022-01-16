@@ -108,3 +108,18 @@
 [submodule "pack/git/opt/matchit"]
 	path = pack/git/opt/matchit
 	url = https://github.com/chrisbra/matchit.git
+[submodule "pack/git/opt/wiki.vim"]
+	path = pack/git/opt/wiki.vim
+	url = https://github.com/lervag/wiki.vim.git
+[submodule "pack/git/opt/wiki-ft.vim"]
+	path = pack/git/opt/wiki-ft.vim
+	url = https://github.com/lervag/wiki-ft.vim.git
+[submodule "pack/git/opt/vim-pandoc"]
+	path = pack/git/opt/vim-pandoc
+	url = https://github.com/vim-pandoc/vim-pandoc.git
+[submodule "pack/git/opt/vim-pandoc-syntax"]
+	path = pack/git/opt/vim-pandoc-syntax
+	url = https://github.com/vim-pandoc/vim-pandoc-syntax.git
+[submodule "pack/git/opt/ctrlp.vim"]
+	path = pack/git/opt/ctrlp.vim
+	url = https://github.com/ctrlpvim/ctrlp.vim.git

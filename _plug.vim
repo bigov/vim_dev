@@ -84,11 +84,29 @@ packadd vim-markdown
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_fenced_languages = ['c++=cpp', 'viml=vim', 'bash=sh', 'ini=dosini', 'csharp=cs']
 let g:vim_markdown_autowrite = 1
+let g:vim_markdown_no_extensions_in_markdown = 1
+let g:vim_markdown_auto_extension_ext = 'md'
+set conceallevel=2
+let g:vim_markdown_toc_autofit = 1
+let g:vim_markdown_follow_anchor = 1
+let g:vim_markdown_anchorexpr = "'---'.v:anchor.'---'"
 
 " -----------------------------------------------------------------------------
 " Автоматическое определение и подсветка синтаксиса файлов GLSL шейдеров
 " -----------------------------------------------------------------------------
 packadd glsl.vim
+
+" -----------------------------------------------------------------------------
+" Full path fuzzy file, buffer, mru, tag, ... finder for Vim
+" https://github.com/ctrlpvim/ctrlp.vim.git
+"
+" Run :CtrlP or :CtrlP [starting-directory] to invoke CtrlP in find file mode
+" Run :CtrlPBuffer or :CtrlPMRU to invoke CtrlP in find buffer or find MRU file mode
+" Run :CtrlPMixed to search in Files, Buffers and MRU files at the same time
+" -----------------------------------------------------------------------------
+packadd ctrlp.vim
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
 
 " -----------------------------------------------------------------------------
 " Работа с системой контроля версий GIT
@@ -120,28 +138,6 @@ packadd supertab
 packadd vim-dirvish
 
 "------------------------------------------------------------------------------
-" https://github.com/vimwiki/vimwiki.git
-" https://github.com/vimwiki/utils.git
-"------------------------------------------------------------------------------
-packadd vimwiki
-
-if has('win32')
-  let s:PyCtagsBin = g:vimrc_dir. '\pack\git\opt\vimwiki-utils\vwtags.py'
-else
-  let s:PyCtagsBin = g:vimrc_dir. '/pack/git/opt/vimwiki-utils/vwtags.py'
-endif
-
-let g:tagbar_type_vimwiki = {
-          \   'ctagstype': 'vimwiki'
-          \ , 'kinds': ['h:header']
-          \ , 'sro': '&&&'
-          \ , 'kind2scope': {'h':'header'}
-          \ , 'sort': 0
-          \ , 'ctagsbin': s:PyCtagsBin
-          \ , 'ctagsargs': 'default'
-          \ }
-
-"------------------------------------------------------------------------------
 " https://github.com/preservim/tagbar.git
 "------------------------------------------------------------------------------
 packadd tagbar
@@ -153,7 +149,7 @@ packadd tagbar
 packadd vim-cpp-modern
 
 "------------------------------------------------------------------------------
-" SHOULD BE
+" SHOULD BE USED
 "------------------------------------------------------------------------------
 " Фоновая проверка синтаксиса: https://github.com/dense-analysis/ale
 "------------------------------------------------------------------------------

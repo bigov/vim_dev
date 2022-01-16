@@ -1,17 +1,28 @@
 "
 " Настройка аккордов
 " ==================
+" Переход в режим вставки
+nn ш i
+nn Ш I
+nn ф a
+nn Ф A
+" Вставка из буфера
+nn з p
+nn З P
+" Удаление
+nn В D
+nn ч x
 
 " Чтоб не было задержки при восстановлении в режиме вставки
 inoremap <C-o>u <C-o>u
 
 " Переключение буфера
-map <Space>n :w<cr>:bn<cr>
-map <Space>p :w<cr>:bp<cr>
-map <Space>d :bd!<cr>
+map <Leader>n :w<cr>:bn<cr>
+map <Leader>p :w<cr>:bp<cr>
+map <Leader>d :bd!<cr>
 
 " Open Terminal
-map <Space>t :terminal<cr>
+map <Leader>t :terminal<cr>
 
 "[F2] (<Ctrl>+S) - сохранить содержимое из текущего буфера в файл
 ino <F2> <Esc>:write<cr>a

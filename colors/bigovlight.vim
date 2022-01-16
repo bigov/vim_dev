@@ -151,3 +151,6 @@ exe 'hi Visual           '.s:GoldOnBlue
 "exe 'hi WarningMsg
 exe 'hi WildMenu         '.s:BlackOnWhite
 
+syn match VimMarkdownAnchor /---[a-z0-9A-Z_\-]\{1,64}---/
+hi VimMarkdownAnchor guifg=#DDDDDD guibg=#FFFFFF
+
