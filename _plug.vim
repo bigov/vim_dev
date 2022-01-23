@@ -84,12 +84,13 @@ packadd vim-markdown
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_fenced_languages = ['c++=cpp', 'viml=vim', 'bash=sh', 'ini=dosini', 'csharp=cs']
 let g:vim_markdown_autowrite = 1
-let g:vim_markdown_no_extensions_in_markdown = 1
+let g:vim_markdown_no_extensions_in_markdown = 0
 let g:vim_markdown_auto_extension_ext = 'md'
 set conceallevel=2
 let g:vim_markdown_toc_autofit = 1
 let g:vim_markdown_follow_anchor = 1
 let g:vim_markdown_anchorexpr = "'---'.v:anchor.'---'"
+let g:vim_markdown_edit_url_in = 'tab'
 
 " -----------------------------------------------------------------------------
 " Автоматическое определение и подсветка синтаксиса файлов GLSL шейдеров
