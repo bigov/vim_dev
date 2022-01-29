@@ -32,7 +32,7 @@ else "Console Vim
   let s:M = 'cterm'
   let s:C00 = '15'
   let s:C01 = '235'
-  let s:C02 = '240'
+  let s:C02 = '250'
   let s:C03 = '128'
   let s:C04 = '26'
   let s:C05 = '230'
