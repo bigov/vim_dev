@@ -51,7 +51,6 @@ au WinLeave * set nocursorline
 " Подсветка пробелов, табов и др. символов
 set list
 set listchars=tab:‣\ ,trail:·,precedes:«,extends:»
-"set listchars=tab:‣\ ,trail:·,precedes:«,extends:»
 
 " Подсветка вертикальной границы 80 символов
 set textwidth=0
@@ -76,14 +75,23 @@ exec "source " . g:vimrc_dir . "_keys.vim"
 set statusline=[%n]\ %<%f\ [%Y%R,%{&ff},%{&fenc}%W]\ %{FugitiveStatusline()}%=%m\ %03l/%03L\ [%03v\ %03b]
 
 syntax enable
-colorscheme bigovlight
 
-" Загрузить, если есть, персональные настройки проекта
+" individual config - not synchronized by git
+if filereadable(g:vimrc_dir . "my-rc.vim")
+  exec "source " . g:vimrc_dir . "my-rc.vim"
+else
+  exec "source " . g:vimrc_dir . "my-rc-sample.vim"
+endif
+
+" Загрузить, если в текущей папке есть персональные настройки проекта
 if filereadable(".vim")
-  source .vim
+  source ".vim"
 endif
 
 helptags ALL
+
+
+
 " ====== help appendix ========
 
 "set hidden
